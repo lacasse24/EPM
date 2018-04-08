@@ -1,0 +1,45 @@
+<div id="wrapper">
+    <div class="FormulaireConnexion">
+        <form #f="ngForm" (ngSubmit)="AjoutUtilisateur(f)" novalidate>
+            <div id="divAdmin">
+                <fieldset id ="field">
+                    <legend id="legend">Ajout d'un utilisateur</legend>
+                    
+                        <p><label>Prénom : </label>
+                        <input type="text" [(ngModel)]="prenom" name="prenom" required></p>
+                        <p><label>Nom de famille : </label>
+                        <input type="text" [(ngModel)]="nom" name="nom" required></p> 
+                    
+                        <p><label>Courriel : </label>
+                        <input type="email" [(ngModel)]="courriel" name="courriel" required> </p>
+                        <p><label>Nom d'utilisateur : </label>
+                        <input type="text" [(ngModel)]="utilisateur" name="utilisateur" required> </p>
+                    
+                        <p><label>Droits d'administrateurs ? : </label>
+                        <input type="checkbox" [(ngModel)]="admin" name="admin"/> </p>
+                    
+                        <button type="submit" id="btnAjoutUtilisateur">Créer</button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+    <div class="ListeUtil">
+        <fieldset id ="field">
+            <legend id = "legend">Liste des utilisateurs</legend>
+                <div *ngFor="let util of m_TabUtil">
+                    <section class="Util">
+                        Nom: {{util.utilNom}}
+                        &nbsp;&nbsp;&nbsp;
+
+                        Prénom: {{util.utilPren}}
+                        &nbsp;&nbsp;&nbsp;
+                        
+                        <div id="wrapper">
+                        <button id="btnSupprimerUtilisateur"  (click)="onClickDeleteUtil(util.utilId)"><img src="app/images/delete.gif" alt=""/>Utilisateur #{{util.utilId}}</button>
+                        <button id="btnModifierUtilisateur"  (click)="onClickModifUtil(util.utilId, util.utilType, util.utilUserName)">Modifier </button>	
+                        </div>
+                    </section>
+		        </div>
+        </fieldset>
+    </div>
+</div>

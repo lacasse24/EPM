@@ -1,0 +1,12 @@
+stages:
+  - build
+before_script:
+  - 'dotnet restore'
+build:
+ stage: build
+ script:
+  - 'dotnet build'
+  - 'cd SqueletteTests'
+  - 'dotnet xunit'
+ tags:
+  - dotnet

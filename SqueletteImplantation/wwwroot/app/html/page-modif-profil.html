@@ -1,0 +1,64 @@
+<table class="TableEspacePrincipalCat">
+    <fieldset id="field">
+    <legend id="legend">Modification du profil de : {{NomUtil}}</legend>
+    <tr>
+        <td>
+        <fieldset id="RegroupementParametre">
+            <legend id="TitreParametre">Changement du nom d'utilisateur</legend>
+            <div id="SectionNouveauNomUtil">
+                <label>Nouveau nom d'utilisateur:</label>
+                <input [(ngModel)]="NomUtilNouv" (ngModelChange)="ComparaisonChangementNomUtil()" type="text" onpaste="return false;" id="NomUtilNouv">
+            </div>
+            <div id="SectionConfirmationNomUtil">
+                <label>Confirmation:</label>
+                <input [(ngModel)]="NomUtilConf" (ngModelChange)="ComparaisonChangementNomUtil()" type="text" onpaste="return false;" id="NomUtilConf">
+            </div>
+            <button (click)="SauvegarderNomUtilisateur()" id="SauvegarderNomUtil" disabled>Sauvegarder</button>
+        </fieldset>
+        </td>
+        <td>
+            <fieldset id="RegroupementParametre">
+            <legend id="TitreParametre">Changement du mot de passe</legend>
+            <div id="SectionNouveauMdp">
+                <label>Nouveau mot de passe:</label>
+                <input [(ngModel)]="MdpNouv" (ngModelChange)="ComparaisonChangementMdp()" type="password" onpaste="return false;" id="MdpNouv">
+            </div>
+            <div id="SectionConfirmationMdp">
+                <label>Confirmation:</label>
+                <input [(ngModel)]="MdpConf" (ngModelChange)="ComparaisonChangementMdp()" type="password" onpaste="return false;" id="MdpConf">
+            </div>
+            <button (click)="SauvegarderMotDePasse()" id="SauvegarderMdp" disabled>Sauvegarder</button>
+            </fieldset>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <fieldset id="RegroupementParametre">
+            <legend id="TitreParametre">Changement de l'adresse email</legend>
+            <div id="SectionNouveauEmail">
+                <label>Nouvelle adresse email:</label>
+                <input [(ngModel)]="EmailNouv" (ngModelChange)="ComparaisonChangementEmail()" type="email" onpaste="return false;" id="EmailNouv">
+            </div>
+            <div id="SectionConfirmationEmail">
+                <label>Confirmation:</label>
+                <input [(ngModel)]="EmailConf" (ngModelChange)="ComparaisonChangementEmail()" type="email" onpaste="return false;" id="EmailConf">
+            </div>
+            <button (click)="SauvegarderEmail()" id="SauvegarderEmail" disabled>Sauvegarder</button>
+        </fieldset>
+        </td>
+        <td *ngIf="!this.ValidationPage()">
+        <fieldset id="RegroupementParametre">
+            <legend id="TitreParametre">Changement des droits utilisateurs</legend>
+            <div id="SectionConfirmationType">
+                <label>Sélectionner pour donner les droits d'administrateur</label>
+                <input type="checkbox" [(ngModel)]="DroitNouv" name="DroitNouv" id="DroitNouv" >
+            </div>
+            <button (click)="SauvegarderDroitUser()" id="SauvegarderType">Sauvegarder</button>
+        </fieldset>
+    </td>
+    </tr>
+    
+    </fieldset>
+</table>
+
+

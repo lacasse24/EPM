@@ -1,0 +1,256 @@
+:root{
+	--CouleurTheme: rgba(43, 47, 61, 0.71);
+	--CouleurThemeHover: #464d63;
+    --CouleurFooter: rgb(255, 255, 255);
+}
+
+
+
+*{
+    font-family: 'Kanit', sans-serif !important;
+    outline: none !important;
+}
+
+
+a {text-decoration:none;}
+
+html{
+    margin:0px;
+    padding:0px;
+    height:100vh;
+    border:none;
+    overflow: hidden;
+}
+
+
+body{
+    margin:0px;
+    padding:0px;
+    border:none;
+    overflow: hidden;
+    height: 100vh;
+    background-color: var(--CouleurFooter);
+}
+
+#footer{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100vw;
+    background-color: var(--CouleurFooter);
+    color: rgb(161, 161, 161);
+    text-align: center;
+    font-size: 0.8em;
+}
+
+
+
+.TableComplete{
+    width: 100vw;
+    height: 96vh;
+    border-spacing: 0px;
+    background-image:url('app/images/font8.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+
+#Menu{
+    background-color: var(--CouleurTheme);
+    box-shadow: 3px 4px 3px #8c8c8c;
+    color: white;
+    position: relative;
+    padding: 0px;
+    min-height: 60vh;
+    max-height: 80vh;
+    display: block;
+}
+
+
+#Menu hr{
+    width: 100%;
+    size: 10;
+	border-top: 1px solid #8c8b8b;
+}
+
+#Menu h3{
+    position: relative;
+    float: left;
+}
+
+#Menu ul{
+    padding-left: 20px;
+    list-style-type: none;
+    float: left;
+    margin: 0px;
+}
+
+#Menu li {
+    list-style-type: none;
+    float: left;
+    margin: 0px;
+}
+
+
+#divParametre{
+   position: relative;
+   display: inline-block;
+   text-align: left;
+   margin: 5px;
+   padding-top: 3px;
+}
+
+#divAdmin{
+   position: relative;
+   padding: 5px;
+   top: 3px;
+   display: inline-block;
+   text-align: left;
+
+}
+
+#divHistorique
+{
+   position: relative;
+   padding-left: 5px;
+   padding-right: 5px;
+   display: inline-block;
+   text-align: left;
+   margin: none;
+}
+
+#divHistorique h3, #divParametre h3, #divAdmin h3{
+    margin-top: 0px;
+}
+
+
+
+#lientelechargement{
+    background-color: rgba(125, 141, 163, 0.71);
+	margin-bottom: 10px;
+    margin-right: 10px;
+	border-radius: 3px;
+	padding: 5px;
+	color: white;
+	position: relative;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+#divAdmin li, #divParametre li
+{
+    margin-bottom: 10px;
+    cursor: pointer;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+     transition:.5s;
+}
+
+#divAdmin li:hover, #divParametre li:hover {
+   
+    opacity: 70;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+
+
+#Navigation{
+    height: 6vh;
+    background:linear-gradient(lightgray ,var(--CouleurTheme) 70%);
+    box-shadow: 0 3px 4px #8c8c8c;
+    color: white;
+    border-radius:5px;
+    text-align: right;    
+}
+
+
+
+#EspaceLogo{
+    background:linear-gradient(lightgray ,var(--CouleurTheme) 70%);
+    box-shadow: 3px 4px 3px #8c8c8c;    
+    text-align: center;
+    min-width: 168px;
+    width: 10%;
+    border-radius:2px;
+    padding: 0px;
+}
+
+#EspaceLogo img:hover{
+    cursor: pointer;
+}
+
+#EspacePrincipal{
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.btnav
+{
+    border-radius:5px;	
+	border: none;
+	background-color: var(--CouleurTheme);
+	cursor: pointer;
+	color: white;
+	padding: 8px;
+	padding-left: 12px;
+	padding-right: 12px;
+	font-size: 20px;
+    width: 140px;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: right;
+    margin-right: 10px;;
+}
+
+
+.btnav:hover{
+    background:linear-gradient(white 7%,var(--CouleurThemeHover));
+}
+
+#divDeconnexion{
+	display:inline-block;
+	text-align: right;	
+}
+
+#divAccueil{
+	display:inline-block;
+	text-align: left;	
+}
+
+.loader {
+    border: 20px solid #f3f3f3;
+    border-top: 20px solid #8c8c8c;
+    border-bottom: 20px solid #8c8c8c;
+    border-radius: 50%;
+    border-style: double;
+    width: 120px;
+    height: 120px;
+    animation: spin 1.25s linear infinite;
+
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

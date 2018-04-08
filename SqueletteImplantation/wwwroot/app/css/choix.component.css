@@ -1,0 +1,22 @@
+#floatleft {
+    float:left; 
+    width: 47%;
+    height: 60vh;
+    background-size: cover;    
+    border-radius: 25px;
+    margin-left: 2%;
+}
+
+#floatright {
+    float: right;
+    width: 47%;
+    height: 60vh;
+    background-size: cover;    
+    border-radius: 25px;
+    margin-right: 2%;
+}
+
+#floatleft:hover, #floatright:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}

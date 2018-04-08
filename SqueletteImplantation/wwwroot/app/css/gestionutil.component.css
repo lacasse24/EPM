@@ -1,0 +1,148 @@
+.FormulaireConnexion{
+	position: relative;
+	text-align: center;
+    float:left;
+    align-items: center
+}
+
+#wrapper {
+  display: inline-block; 
+  width: 90%;
+  
+}
+
+.ListeUtil
+{
+    overflow-y: auto;
+    display: inline-block;
+    margin-left:10%;
+    min-width: 300px;
+    text-align: left;
+}
+
+p {
+    display: flex;
+}
+
+.FormulaireConnexion {
+    margin-left: 100px;
+    display: inline-block;
+}
+
+.FormulaireConnexion div input {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.FormulaireConnexion div label{
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin-top:10px;
+}
+
+.Util{
+	background-color: rgba(125, 141, 163, 0.71);
+	margin: 10px;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+	display: block;
+	display: inline-block; 
+
+}
+
+
+input{
+	border-radius:7px;
+	padding: 5px;
+	margin: 8px 0;
+	box-sizing: border-box;
+    margin-left:2%;
+}
+
+input:focus {
+    border: 2px solid lightblue;
+}
+
+#btnAjoutUtilisateur {
+	border-radius:5px;	
+	border: none;
+	background-color: var(--CouleurTheme);
+	cursor: pointer;
+	color: white;
+	padding: 8px;
+	font-size: 24px;
+	padding-left: 12px;
+	padding-right: 12px;
+	font-size: 20px;
+    width: 150px;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+#btnAjoutUtilisateur:hover{
+	background:linear-gradient(white 7%,var(--CouleurThemeHover));
+}
+
+#field {
+  border: 3px solid #8c8c8c;
+  position: relative;
+  z-index: 1;
+  background:linear-gradient(lightgray ,var(--CouleurTheme) 50%);
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 50px;
+  margin:2%;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+  border-radius: 8px;
+  border-color: grey;
+    
+}
+
+#btnModifierUtilisateur{
+    background-color: rgba(125, 141, 163, 0.71);
+	border-radius: 5px;
+	color: white;
+	display: block;
+    padding:5px;
+	float:left;
+    margin-top:5px;
+	cursor: pointer;
+    
+}
+
+#btnSupprimerUtilisateur{
+	background-color: rgba(125, 141, 163, 0.71);
+	border-radius: 5px;
+    margin-top:5px;
+	color: white;
+	display: block;
+	float:right;
+	cursor: pointer;
+
+}
+
+#legend {
+    text-decoration: underline;
+    margin-top:-20px;
+    position: absolute;
+	display: block;
+	font-weight:bold;
+	font-size: 16px;
+    -webkit-padding-start: 2px;
+    -webkit-padding-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+	border-image: initial;
+	
+}
+
+
+

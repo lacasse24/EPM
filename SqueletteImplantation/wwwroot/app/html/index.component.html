@@ -1,0 +1,14 @@
+
+<div class="FormulaireConnexion">
+	<form #f="ngForm" (ngSubmit)="Connexion(f)" novalidate class = "formContour">
+		<div id="divConnexion">
+			<p><label>Nom d'utilisateur : </label>
+			<input type="text" [(ngModel)]="utilisateur" name="utilisateur" required></p>
+			<p><label>Mot de passe : </label>
+			<input type="password" [(ngModel)]="motdepasse" name="motdepasse" required></p>
+		</div>
+		<p> <button type="submit" id="btnConnexion">Connexion</button></p>
+		<button type="button" id="btnOublie" (click)="MotDePasseOublie()">Mot de passe oublié ?</button>
+	</form>
+</div>
+

@@ -1,0 +1,162 @@
+/********************InputFile****************************************/
+
+*{
+	outline: 0;
+}
+
+#container{
+	width: fit-content;
+	float: right;
+	margin-right: 4%;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	margin-bottom: 4%;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	z-index: -1;
+	display: none;
+}
+
+label {
+	display: inline-block;
+	border-radius:5px;	
+	border: none;
+	background-color: var(--CouleurTheme);
+	color: white;
+	padding: 8px;
+	font-size: 20px;
+    width: 200px;
+	
+}
+
+
+
+
+label:hover {
+    background:linear-gradient(white 7%,var(--CouleurThemeHover));
+	cursor: pointer;
+}
+
+/********************InputFile****************************************/
+
+
+
+.TableEspacePrincipalCat{
+	width: 100%;
+    background-size:100%;
+    background-position:center;
+	background-attachment:fixed;
+	background-repeat: no-repeat;	
+    border-spacing: 0px;
+	position: absolute;
+	top: 0px;    
+}
+
+#EspaceCritereChoisi{
+	height: 0vh;
+	width: 138vw;
+	border-bottom-style: solid;
+    border-bottom-color: var(--CouleurTheme);
+    border-left-color: var(--CouleurTheme);
+    border-left-style: solid;
+    box-shadow: 0px 5px 4px -2px #8c8c8c;
+    position: relative;
+}
+
+#ListeCritereChoisi{
+    list-style: none;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+}
+
+#CritereChoisi{
+    border-width: 1px;
+    display: inline-block;
+	padding: 3px;
+	border-radius:5px;	
+	border: none;
+	background-color: #EAEDED;
+	font-size: 20px;
+    display:inline-block; 
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: right;
+	margin-right: 2px;
+}
+
+#btnAjouterTrace{
+	margin-left: 10px;;
+	border-radius: 5px;	
+	border: none;
+	background-color: var(--CouleurTheme);
+	color: white;
+	padding: 8px;
+	margin-top: 10px;
+	font-size: 20px;
+    width: 140px;
+	display: inline-block;
+}
+
+ #btnAjouterTrace:hover
+{
+    background:linear-gradient(white 7%,var(--CouleurThemeHover));
+	cursor: pointer;
+}
+
+#ChoixCategorie{
+	width: 41vh;
+	border-bottom-style: solid;
+    border-bottom-color: var(--CouleurTheme);
+    box-shadow: 0px 5px 4px -2px #8c8c8c;
+}
+
+
+#ListeCritere{
+	background-color:var(--CouleurTheme);
+	border-radius: 5px;
+	display: none;
+	z-index: 1;
+	position: absolute;
+	box-sizing: border-box;
+	width: fit-content;
+}
+
+.Critere{
+	border-radius: 5px;
+	padding: 5px;
+	margin: 2px;
+	color: white;
+	display: inline-block;
+	
+}
+
+.Categorie{
+	background-color: rgba(125, 141, 163, 0.71);
+	margin: 10px;
+	border-radius: 5px;
+	padding: 5px;
+	color: white;
+	display: block;
+	position: relative;
+}
+
+.Critere:hover{
+	cursor: pointer;
+	background-color:  rgba(125, 141, 163, 0.71);
+}
+
+.Categorie:hover{
+	cursor: pointer;
+	background-color: var(--CouleurTheme);
+}
+
+
+.ShowElement{
+	display: inline-block;
+}

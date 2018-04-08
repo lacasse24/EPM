@@ -1,0 +1,48 @@
+<div id="base">
+	<table class="TableEspacePrincipalCat">
+		<tr id="PremiereLigne">
+			<td id="ChoixCategorie"> 
+				<section> 	
+					<div class="Categorie" *ngFor ="let categ of m_TabCat" id="{{categ.catId}}" (click)="OnClickCategorie(categ)" (click)="OnClickListeDeroulanteCritere(categ.catNom)" title="{{categ.catNom}}">
+						{{categ.catNom}}
+					</div>
+					<div id="ListeCritere">
+						<span class="Critere" *ngFor ="let critere of m_TabCrit" (click)="OnClickCritere(critere)" title="{{critere.critNom}}">
+							<img src="app/images/add.gif" alt="non" />
+							{{critere.critNom}}
+						</span>
+					</div>	
+				</section>
+            </td>
+			<td id="EspaceCritereChoisi">
+				<ul id="ListeCritereChoisi">
+					<table>
+						<tr>
+							<td *ngFor="let choix of m_TabRecherche"  id="CritereChoisi">
+								<span><img src="app/images/delete.gif" alt="" (click)="OnClickSupprimer(choix)" (click)="OnClickRechercher()" style="cursor:pointer;"/> {{choix.critNom}}</span>
+							</td>
+						</tr>
+					</table>
+				</ul>
+				<button id="btnChercher" (click)="OnClickRechercher()"><span><img src="app/images/lens.gif" alt=""/>Rechercher</span></button>				
+			</td>
+		</tr>
+		<tr id="TroisiemeLigne">
+			<td colspan="2">
+				<div *ngFor="let trace of m_TabTrace">
+					<section class="Trace">
+						Nom: {{trace.traceNom}}
+						&nbsp;&nbsp;&nbsp;
+							
+						Logiciel à utiliser: {{trace.tracLogi}}
+						<button id="btnSupprimerTrace" *ngIf="ValidationUtil()" (click)="onClickDeleteTrace(trace.tracId)"><img src="app/images/delete.gif" alt=""/>Tracé #{{trace.tracId}}</button>
+						<div *ngIf="ValidationPage()" class="hover_img"> 
+     						<a>Voir l'aperçu<span><img src="{{trace.tracUrl}}" (click)="onClickImg(trace.tracUrl)" alt="Aucun aperçu" height="100" /></span></a>
+						</div>
+						<a id="lientelechargement" (click)="onClickTelecharger(trace.tracId)" href="{{trace.tracUrl}}" download ><img src="app/images/download.gif" alt=""/>Télécharger</a>
+					</section>		
+			    </div>
+			</td>
+		</tr>		
+	</table>
+</div>

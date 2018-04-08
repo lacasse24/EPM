@@ -1,0 +1,105 @@
+<div id="base">
+	   <table class="TableEspacePrincipalCat">
+			<tr>
+				<td id="ChoixCategorie">  
+					<fieldset>
+					<legend>Choix du domaine</legend>
+						<button (click)="OnClickDomCardio()" id = "btnCardio" class="btn btnCardio"> Cardiologie </button>
+						<button (click)="OnClickDomNeuro()" id = "btnNeuro" class="btn btnNeuro"> Neurologie </button>
+					</fieldset>
+					<fieldset>
+					<legend>Suppression d'une catégorie</legend>
+					
+					<div>
+					<div class="ListeDeroulanteCategorie">
+						<button (click)="OnClickListeDeroulanteCategorie()" class="btnCategorie"> {{NomCateg}} </button>
+						<select class="ListeCategorie" (click)="OnClickListeDeroulanteCategorie()">
+							 <option id="ElementListe" *ngFor ="let categ of m_TabCat" (click)="OnClickCategorie(categ,1)" title="{{categ.catNom}}">
+								 {{categ.catNom}}
+							</option>
+						</select>
+					</div>
+					<div class = "DivSupp">
+						<img src="app/images/delete.png" class ="Supp" alt="" (click)="OnClickSupprimerCateg()"/>
+					</div>
+					</div>
+					
+					</fieldset>
+					<form class="form-horizontal">
+							<fieldset>
+							<legend>Ajout d'une catégorie</legend>
+							<div class="form-group">
+								<label for="input" class="col-lg-2 control-label">Nom :</label>
+								<div class="col-lg-10">
+								<input type="text" class="form-control" id="txtNomCat" [(ngModel)]='NomAjoutCat' [ngModelOptions]="{standalone: true}">
+								</div>
+							</div>
+							
+							
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-2">
+								<button type="reset" class="btn btn-default">Effacer</button>
+								<button type="submit" (click)="OnClickAjoutCategorie()" class="btn btn-primary">Soumettre</button>
+								</div>
+							</div>
+							</fieldset>
+						</form>
+                </td>
+				<td id="EspaceCritereChoisi" rowspan="2">
+					<fieldset>
+					<legend>Choix de la catégorie à modifier</legend>
+					
+						<button (click)="OnClickListeDeroulanteCategorie2()" class="btnCategorie"> {{NomCateg2}} </button>
+						<select class="ListeCategorie2" (click)="OnClickListeDeroulanteCategorie2()">
+							 <option id="ElementListe" *ngFor ="let categ of m_TabCat" (click)="OnClickCategorie(categ,2)" title="{{categ.catNom}}">
+								 {{categ.catNom}}
+							</option>
+						</select>
+						
+					</fieldset>
+					<fieldset>
+					<legend class="lgd" >Suppression d'un critère</legend>
+					
+					<div class="Container">
+						<div class="ListeDeroulanteCritere">
+							<button (click)="OnClickListeDeroulanteCritere()" class="btnCritere"> {{NomCrit}} </button>
+							  <select class="ListeCritere" (click)="OnClickListeDeroulanteCritere()">
+								<option id="ElementListe" *ngFor ="let critere of m_TabCrit" (click)="OnClickCritere(critere)" title="{{critere.critNom}}">
+									
+									{{critere.critNom}}
+								</option>
+							</select>
+						</div>
+						<div class = "DivSupp">
+								<img src="app/images/delete.png" alt="" (click)="OnClickSupprimerCrit()"/>
+						</div>
+					</div>
+				</fieldset>
+				
+				<form class="form-horizontal">
+						<fieldset>
+						<legend>Ajout d'un critère</legend>
+						
+						<div class="form-group">
+							
+							<label for="input" class="col-lg-2 control-label">Nom :</label>
+							<div class="col-lg-10">
+							<input type="text" class="form-control" [(ngModel)]='NomAjoutCrit' [ngModelOptions]="{standalone: true}">
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<div class="col-lg-10 col-lg-offset-2">
+							<button type="reset" class="btn btn-default">Effacer</button>
+							<button type="submit" class="btn btn-primary" (click)="OnClickAjoutCritere()">Soumettre</button>
+							</div>
+						</div>
+						</fieldset>
+					</form>
+				</td>
+			</tr>
+
+			
+		</table>
+	</div>

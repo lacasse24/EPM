@@ -1,0 +1,10 @@
+<div class="FormulaireMDP">
+    <form #p="ngForm" (ngSubmit)="ResetMDP()" novalidate>
+        <div>
+            <p><label>Courriel: </label>
+            <input type="text" [(ngModel)]="courriel" name="courriel" required></p>    
+	        <p><button type="submit" id="btnReset">Réinitialiser le mot de passe</button></p>
+        </div>
+        <p><button type="button" id="btnCancel" (click)="Cancel()">Cancel</button></p>
+    </form>
+</div>

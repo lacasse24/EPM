@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="/../app/css/app.component.css">
+	<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+	<title> EPM </title>
+	</head>
+
+	<body (mousemove)="MouvementSouris($event)">
+		<table class="TableComplete">
+            <tr>
+				<td id="EspaceLogo" rowspan="2">
+					<img src="app/images/LogoCegep.png" alt="Logo Cegep" (click)="Reroutage(2)">
+				</td>
+                <td id="Navigation" colspan="2">
+					<div id="divAccueil">
+						<a href="Aide.pdf" download><input class="btnav" type="button" name="Aide "value="Aide" /></a>
+					</div>
+					<div id="divAccueil" *ngIf="this.authentificationService.Connecte()">
+						<button (click)="Reroutage(2)" class="btnav">Accueil</button>
+					</div>
+					<div id="divDeconnexion" *ngIf="this.authentificationService.Connecte()">
+						<button (click)="Deconnexion(0)" class="btnav">Déconnexion</button>
+					</div>
+                </td> 
+            </tr>
+			<tr>
+				<td colspan="2" rowspan="2" id="EspacePrincipal">
+					<router-outlet></router-outlet>
+				</td>
+			</tr>
+			<tr>
+				<td id="Menu">
+					<div *ngIf="this.authentificationService.Connecte()" id="divParametre">
+						<h3>Paramètres</h3>
+						<ul>
+							<li (click)="Reroutage(3)">Modification du profil utilisateur</li>
+						</ul>
+					</div>
+                    <div *ngIf="this.authentificationService.Admin()" id="divAdmin">
+        				<h3>Outils administrateur</h3>
+						<ul>
+							<li *ngIf="this.authentificationService.Domaine()" (click)="Reroutage(0)">Page d'ajout de tracés</li>
+							<li *ngIf="this.authentificationService.Domaine()" (click)="Reroutage(1)">Page d'ajout de catégories et de critères</li>
+							<li (click)="Reroutage(4)">Gestion des utilisateurs</li>
+						</ul> 
+					</div>
+					<hr *ngIf="this.authentificationService.Connecte()">
+					<div *ngIf="this.authentificationService.Connecte()" id="divHistorique">
+                        <h3>Historique</h3>
+						<br>
+						<ul>
+							<a *ngFor="let trace of this.historiqueService.tabHistoriqueTrace" id="lientelechargement"  href="{{trace.tracUrl}}" (click)="onClickTelecharger(trace.tracId)" download ><img src="app/images/download.gif" alt=""/>{{ trace.traceNom}}</a>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div id="footer">
+			<p>Copyright © 2017 Site web développé par Alex Lacasse, Étienne Savard, Frédérick Picard, Marc-Antoine Chevalier et Thinhinane Alliche pour le département d'électrophysiologie médicale du cégep de Lévis-Lauzon</p>
+		</div>
+	</body>
+</html>

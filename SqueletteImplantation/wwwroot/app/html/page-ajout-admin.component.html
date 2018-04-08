@@ -1,0 +1,38 @@
+<div id="base">
+	<table class="TableEspacePrincipalCat">
+		<tr id="PremiereLigne">
+			<td id="ChoixCategorie"> 
+				<section> 	
+					<div class="Categorie" *ngFor ="let categ of m_TabCat" id="{{categ.catId}}" (click)="OnClickCategorie(categ)" (click)="OnClickListeDeroulanteCritere(categ.catNom)" title="{{categ.catNom}}">
+						{{categ.catNom}}
+					</div>
+					<div id="ListeCritere">
+						<span class="Critere" *ngFor ="let critere of m_TabCrit" (click)="OnClickCritere(critere)" title="{{critere.critNom}}">
+							<img src="app/images/add.gif" alt="non" />
+							{{critere.critNom}}
+						</span>
+					</div>	
+				</section>
+            </td>
+			<td id="EspaceCritereChoisi">
+				<ul id="ListeCritereChoisi">
+					<table>
+						<tr>
+							<td *ngFor="let choix of m_TabRecherche"  id="CritereChoisi">
+								<span><img src="app/images/delete.gif" alt="" (click)="OnClickSupprimer(choix)" style="cursor:pointer;"/> {{choix.critNom}}</span>
+							</td>
+						</tr>
+					</table>
+				</ul>
+				<div id="container">
+                	<label id="Fichier" for="file">
+						<img src="app/images/download.png" alt=""/> 
+						<input type="file" name="file" id="file" class="inputfile"  (change)="fileChange($event)"  accept=".pdf,.doc,.docx,.jpg,.png"/>
+						{{Message}}
+					</label>
+					<button id="btnAjouterTrace" (click)="onClickAddTrace()"><img src="app/images/add.png" alt=""/>Soumettre</button>
+				</div>		
+			</td>
+		</tr>			
+	</table>
+</div>
